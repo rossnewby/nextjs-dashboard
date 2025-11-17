@@ -1,11 +1,10 @@
 'use client';
 
 import Square from "@/app/ui/tic-tac-toe/square";
-import {useState} from "react";
 
-export default function Board({ xIsNext, squares, onPlay }) {
+export default function Board({ xIsNext, squares, onPlay } : {xIsNext:boolean, squares:any, onPlay:any}) {
 
-  function handleClick(i) {
+  function handleClick(i:number) {
     if (squares[i] || calculateWinner(squares)) {
       return;
     }
@@ -48,7 +47,7 @@ export default function Board({ xIsNext, squares, onPlay }) {
   </>;
 }
 
-function calculateWinner(squares) {
+function calculateWinner(squares:any) {
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
